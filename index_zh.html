@@ -3,263 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raylink Infinite | HappyBoys - 打造顶级休闲益智游戏</title>
+    <title>Raylink Infinite | HappyBoys - 顶级休闲游戏工作室</title>
     <style>
-        /* 基础样式复位 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth; /* 平滑滚动 */
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-
-        /* 导航栏 */
+        /* CSS 与英文版完全一致以保持品牌统一 */
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; line-height: 1.6; color: #2d3436; }
+        
         header {
-            background: #fff;
-            padding: 1rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 8%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4A90E2;
-        }
+        .logo { font-size: 1.4rem; font-weight: 800; color: #0984e3; }
+        .logo span { color: #00b894; }
 
-        nav a {
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: #636e72; margin-left: 2rem; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: #0984e3; }
+
+        .lang-switch {
+            margin-left: 2.5rem;
+            padding: 5px 12px;
+            border: 1px solid #0984e3;
+            border-radius: 4px;
+            color: #0984e3;
             text-decoration: none;
-            color: #555;
-            margin-left: 2rem;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: all 0.3s;
         }
+        .lang-switch:hover { background: #0984e3; color: #fff; }
 
-        nav a:hover {
-            color: #4A90E2;
-        }
+        section { padding: 120px 10% 80px; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; font-weight: 800; }
 
-        /* 通用区块样式 */
-        section {
-            padding: 100px 10% 60px;
-            min-height: auto;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #222;
-        }
-
-        /* Hero 区域 */
         #home {
             height: 100vh;
-            background: linear-gradient(135deg, #4A90E2 0%, #67B26F 100%);
-            color: white;
+            background: radial-gradient(circle at top right, #e0f2fe, #ffffff);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding-top: 0;
         }
 
-        #home h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
+        #home h1 { font-size: 3.5rem; background: linear-gradient(135deg, #0984e3, #00b894); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card { background: #fff; padding: 2.5rem; border-radius: 20px; border: 1px solid #f0f0f0; }
+        
+        .partners-flex { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; opacity: 0.5; margin-top: 2rem; }
+        .partner { font-weight: 700; }
 
-        #home p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
+        .team-container { display: flex; gap: 40px; align-items: center; }
+        .team-stats { flex: 1; background: #0984e3; color: white; padding: 2.5rem; border-radius: 20px; }
 
-        /* 业务介绍 */
-        .business-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .review-card { background: #f8f9fa; padding: 2rem; border-radius: 15px; }
 
-        .card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* 合作伙伴（变现平台） */
-        .partners {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-            filter: grayscale(100%);
-            opacity: 0.6;
-        }
-
-        .partner-item { font-weight: bold; font-size: 1.2rem; }
-
-        /* 团队介绍 */
-        #team { background-color: #fff; }
-        .team-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-        }
-        .team-text { flex: 1; min-width: 300px; }
-
-        /* 用户评价 */
-        .testimonial-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .testimonial {
-            background: #f1f1f1;
-            padding: 1.5rem;
-            border-left: 5px solid #4A90E2;
-            font-style: italic;
-        }
-
-        /* 页脚 */
-        footer {
-            background: #222;
-            color: #fff;
-            text-align: center;
-            padding: 3rem 0;
-            margin-top: 50px;
-        }
-
-        /* 响应式调整 */
-        @media (max-width: 768px) {
+        footer { background: #2d3436; color: #dfe6e9; padding: 3rem 10%; text-align: center; }
+        @media (max-width: 768px) { 
             header { flex-direction: column; padding: 1rem; }
-            nav { margin-top: 1rem; }
-            nav a { margin: 0 10px; font-size: 0.9rem; }
-            #home h1 { font-size: 2.2rem; }
+            nav { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px 10px; }
+            .lang-switch { margin: 10px 0 0 0; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Raylink Infinite</div>
+        <div class="logo">Raylink <span>Infinite</span></div>
         <nav>
             <a href="#home">首页</a>
             <a href="#business">业务内容</a>
-            <a href="#team">关于HappyBoys</a>
+            <a href="#team">HappyBoys团队</a>
             <a href="#reviews">用户评价</a>
+            <a href="index.html" class="lang-switch">English</a>
         </nav>
     </header>
 
     <section id="home">
         <h1>让快乐触手可及</h1>
-        <p>Raylink Infinite 旗下 HappyBoys 团队，致力于为全球玩家提供最纯粹的休闲益智体验。</p>
-        <div style="margin-top: 20px;">
-            <strong>主要平台：Google Play | App Store</strong>
-        </div>
+        <p>Raylink Infinite 旗下 <strong>HappyBoys</strong> 团队，为全球玩家打造高品质休闲益智游戏。</p>
+        <div style="margin-top: 20px; font-weight: 600;">发布平台：Google Play & App Store</div>
     </section>
 
     <section id="business">
-        <h2>我们的业务</h2>
-        <div class="business-grid">
+        <h2>核心业务</h2>
+        <div class="grid">
             <div class="card">
-                <h3>自研游戏开发</h3>
-                <p>深耕休闲益智赛道，通过数据驱动打磨极致的用户留存与心流体验。</p>
+                <h3>自研休闲游戏</h3>
+                <p>深耕休闲与益智赛道，专注于高留存、沉浸式的游戏体验开发。</p>
             </div>
             <div class="card">
-                <h3>全球化发行</h3>
-                <p>覆盖全球 150+ 国家和地区，精准触达数百万活跃玩家。</p>
+                <h3>全球广告变现</h3>
+                <p>成熟的 IAA 变现架构，深度对接全球顶尖移动广告平台。</p>
             </div>
             <div class="card">
-                <h3>IAA 商业变现</h3>
-                <p>成熟的广告变现策略，实现用户体验与商业收益的完美平衡。</p>
+                <h3>数据驱动增长</h3>
+                <p>利用实时数据分析优化玩法及用户获取成本，实现商业闭环。</p>
             </div>
         </div>
-        
-        <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">战略合作伙伴</h3>
-        <div class="partners">
-            <div class="partner-item">Google AdMob</div>
-            <div class="partner-item">Meta Audience Network</div>
-            <div class="partner-item">Unity Ads</div>
-            <div class="partner-item">AppLovin</div>
+        <div class="partners-flex" style="margin-top: 4rem;">
+            <span class="partner">Google AdMob</span>
+            <span class="partner">Meta</span>
+            <span class="partner">Unity</span>
+            <span class="partner">AppLovin</span>
         </div>
     </section>
 
-    <section id="team">
-        <h2>关于 HappyBoys 团队</h2>
-        <div class="team-content">
-            <div class="team-text">
-                <h3>一群热爱游戏的“大男孩”</h3>
-                <p>HappyBoys 是 Raylink Infinite 内部最具创新力的研发团队。我们专注于休闲益智（Casual/Puzzle）领域，坚持“小而美、快而精”的开发理念。</p>
-                <p style="margin-top: 1rem;">从关卡设计到交互动画，我们对每一个细节都充满热忱，确保玩家在碎片化的时间里收获满满的成就感。</p>
+    <section id="team" style="background: #fafafa;">
+        <div class="team-container">
+            <div style="flex: 1.5;">
+                <h2>关于 HappyBoys</h2>
+                <p>我们是 Raylink Infinite 旗下的核心研发工作室，专注于“休闲益智”领域。我们的使命是让每个人都能在碎片化的时间里收获纯粹的快乐。</p>
             </div>
-            <div class="team-text" style="background: #f0f7ff; padding: 2rem; border-radius: 10px;">
-                <h4>团队成就</h4>
-                <ul>
-                    <li>多款单品在 Google Play 获得 4.5+ 高分好评</li>
-                    <li>累计下载量突破千万量级</li>
-                    <li>高效的 IAA 变现闭环模型</li>
-                </ul>
+            <div class="team-stats">
+                <h4>团队优势</h4>
+                <p>• 累计下载量突破千万</p>
+                <p>• 顶尖的 IAA 变现优化经验</p>
+                <p>• 极速的产品迭代与研发能力</p>
             </div>
         </div>
     </section>
 
     <section id="reviews">
-        <h2>全球玩家评价</h2>
-        <div class="testimonial-container">
-            <div class="testimonial">
-                "这些益智游戏真的让我停不下来，UI 设计非常干净！"
-                <br><br><strong>- Alex (USA)</strong>
-            </div>
-            <div class="testimonial">
-                "非常适合在通勤路上玩，关卡设计很有挑战性。"
-                <br><br><strong>- Yuki (Japan)</strong>
-            </div>
-            <div class="testimonial">
-                "画风很可爱，HappyBoys 的作品总是很有创意。"
-                <br><br><strong>- Carlos (Brazil)</strong>
-            </div>
+        <h2>玩家反馈</h2>
+        <div class="reviews-grid">
+            <div class="review-card">“简单好玩，UI设计非常精美！” - 来自美国玩家</div>
+            <div class="review-card">“非常好的通勤杀时间利器，很喜欢。” - 来自英国玩家</div>
+            <div class="review-card">“关卡设计很有挑战性。” - 来自日本玩家</div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2023 Raylink Infinite - HappyBoys Team. All Rights Reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; color: #777;">专注移动应用与游戏自研发行</p>
+<footer>
+        <p><strong>Raylink Infinite</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.7;">专注打造下一代移动娱乐体验</p>
+        
+        <p style="margin-top: 1.5rem;">
+            联系我们：
+            <a href="mailto:boys@happyboys.vercel.app" style="color: #00b894; text-decoration: none; font-weight: 600;">
+                boys@happyboys.vercel.app
+            </a>
+        </p>
+
+        <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 2rem 0;"></div>
+        <p style="font-size: 0.8rem; opacity: 0.5;">&copy; 2025 Raylink Infinite - HappyBoys 团队. 版权所有.</p>
     </footer>
 
-    <script>
-        // 简单的导航背景切换逻辑（可选）
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = '#fff';
-            } else {
-                header.style.background = 'rgba(255,255,255,0.9)';
-            }
-        });
-    </script>
 </body>
 </html>
