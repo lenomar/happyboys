@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raylink Infinite | HappyBoys - Premier Casual Game Studio</title>
+    <style>
+        /* Modern Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3436;
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #0984e3;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #00b894;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #636e72;
+            margin-left: 2.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #0984e3;
+        }
+
+        /* Sections */
+        section {
+            padding: 120px 10% 80px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3.5rem;
+            font-weight: 800;
+            color: #2d3436;
+        }
+
+        /* Hero Section */
+        #home {
+            height: 100vh;
+            background: radial-gradient(circle at top right, #e0f2fe, #ffffff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #home h1 {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #0984e3, #00b894);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        #home p {
+            font-size: 1.25rem;
+            color: #636e72;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .badge {
+            background: #2d3436;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Business Section */
+        #business { background-color: #fcfcfc; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: #fff;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #0984e3;
+        }
+
+        /* Partners Logos */
+        .partners-bar {
+            margin-top: 5rem;
+            text-align: center;
+        }
+
+        .partners-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
+            opacity: 0.5;
+            filter: grayscale(1);
+        }
+
+        .partner { font-weight: 700; font-size: 1.1rem; }
+
+        /* Team Section */
+        .team-container {
+            display: flex;
+            gap: 5%;
+            align-items: center;
+        }
+
+        .team-info { flex: 1; }
+        .team-stats {
+            flex: 1;
+            background: #0984e3;
+            color: white;
+            padding: 3rem;
+            border-radius: 24px;
+        }
+
+        /* Testimonials */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .review-card::before {
+            content: "“";
+            font-size: 4rem;
+            color: #0984e3;
+            opacity: 0.1;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 4rem 10% 2rem;
+            text-align: center;
+        }
+
+        .footer-line {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #home h1 { font-size: 2.5rem; }
+            header { padding: 1rem 5%; flex-direction: column; }
+            nav { margin-top: 1rem; }
+            nav a { margin: 0 10px; }
+            .team-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Raylink <span>Infinite</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#business">Services</a>
+            <a href="#team">HappyBoys</a>
+            <a href="#reviews">Feedback</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Crafting Joy for the World</h1>
+        <p>Raylink Infinite's <strong>HappyBoys</strong> team is dedicated to developing high-quality casual and puzzle games that redefine mobile entertainment.</p>
+        <div class="badge-group">
+            <span class="badge">Google Play</span>
+            <span class="badge">App Store</span>
+        </div>
+    </section>
+
+    <section id="business">
+        <h2>What We Do</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Casual Gaming</h3>
+                <p>We specialize in puzzle and casual mechanics that are easy to pick up but hard to put down, targeting global audiences on Google Play and iOS.</p>
+            </div>
+            <div class="card">
+                <h3>Smart Monetization</h3>
+                <p>Expertly integrated IAA (In-App Advertising) models that maximize revenue through AdMob, Meta, and Unity without compromising player experience.</p>
+            </div>
+            <div class="card">
+                <h3>Global Operations</h3>
+                <p>Full-cycle publishing from A/B testing store listings to large-scale user acquisition and data-driven optimization.</p>
+            </div>
+        </div>
+
+        <div class="partners-bar">
+            <p style="color: #b2bec3; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Monetization Partners</p>
+            <div class="partners-flex">
+                <span class="partner">Google AdMob</span>
+                <span class="partner">Meta Audience Network</span>
+                <span class="partner">Unity Ads</span>
+                <span class="partner">AppLovin</span>
+                <span class="partner">IronSource</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="team-container">
+            <div class="team-info">
+                <h2 style="text-align: left; margin-bottom: 1.5rem;">Meet HappyBoys</h2>
+                <p>HappyBoys is the core R&D powerhouse of Raylink Infinite. We are a group of passionate developers, designers, and data scientists who believe games should be a universal language of happiness.</p>
+                <p style="margin-top: 1rem;">Our agile development process allows us to iterate quickly based on market trends while maintaining the high polish our players expect.</p>
+            </div>
+            <div class="team-stats">
+                <h3 style="margin-bottom: 1.5rem;">Our Impact</h3>
+                <p>• Top-tier retention rates in the Puzzle category</p>
+                <p>• Advanced IAA mediation & optimization</p>
+                <p>• Global reach with millions of active installs</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>Global Player Feedback</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <p>"Incredibly polished puzzles. The perfect way to relax during my lunch break!"</p>
+                <p style="margin-top: 1rem; font-weight: 700;">- James L., United Kingdom</p>
+            </div>
+            <div class="review-card">
+                <p>"Love the art style and the smooth performance. One of the best devs on Google Play."</p>
+                <p style="margin-top: 1rem; font-weight: 700;">- Maria S., Germany</p>
+            </div>
+            <div class="review-card">
+                <p>"Creative levels that actually make you think. Keep up the great work, HappyBoys!"</p>
+                <p style="margin-top: 1rem; font-weight: 700;">- Kenji T., Japan</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Raylink Infinite</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.7;">Empowering the next generation of mobile entertainment.</p>
+        <div class="footer-line"></div>
+        <p style="font-size: 0.8rem; opacity: 0.5;">&copy; 2025 Raylink Infinite - HappyBoys Team. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
