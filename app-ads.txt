@@ -1,3 +1,13 @@
+google.com, pub-3633631010256025, DIRECT, f08c47fec0942fa1
+google.com, pub-8394930828724310, DIRECT, f08c47fec0942fa1
+google.com, pub-9776049879274574, DIRECT, f08c47fec0942fa1
+google.com, pub-9123248135135881, DIRECT, f08c47fec0942fa1
+google.com, pub-6894286760112098, DIRECT, f08c47fec0942fa1
+google.com, pub-4458857905815708, DIRECT, f08c47fec0942fa1
+google.com, pub-6152296082952569, DIRECT, f08c47fec0942fa1
+google.com, pub-8209077259415431, DIRECT, f08c47fec0942fa1
+facebook.com, 1637366569874084, DIRECT, c3e20eee3f780d68
+ironsrc.com, 220597, DIRECT, 79929e88b2ba73bc
 
 advlion.com, 5241, DIRECT, 58b813a6c4d05071
 rubiconproject.com, 26082, RESELLER, 0bfd66d529a55807
